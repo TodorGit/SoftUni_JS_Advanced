@@ -1,0 +1,134 @@
+Strings - Hello
+.split(' ') - seperates by a given symbol
+.includes(value) - this returns true or false if the value is included 
+*.repeat(4) - ****
+.trim() this removes white spaces from both sides of the string
+.trimStart() - removes white space at the start of the string/// case sensitive
+.trimEnd() - removes white space at the end of the string
+.startsWith() - this checks if a strings start with a certain value
+.endsWith() - this checks if a strings ends with a certain value
+.substring(0,3) - works like slice 
+.padStart() - adds elements to the start of the string
+.padEnd() - adds elements to teh end of the index
+.lastIndexOf('l') - returns the last index of l in the string - returns 2
+.indexOf('l') - returns the index of the first occurance of l in the string - returns 3
+Hello Hello.substring(6, 10) - returns Hell starts from index 6 and goes to 10 
+.replace(value to be replaced, value to replace with) - replaces the first instance of the value that needs to be replaced
+
+Array - Methods 
+
+[arr.length - 1] - get last element of an array
+
+spread operator -> ler arr = [1,2,3]
+		   let myarr = [3,33 ...arr] -> console.log(myarr) = [3,33,1,2,3]
+
+function solve(...input) => brings all the inputs
+	      (first, second, ...third) => 1 , 2 [1,2,3]
+
+.reverse() method reverses the order of the elements in an array
+.push() - add to the end
+.pop() - remove from the end
+.unshift() - add to the beginning
+.shift() - remove from the beginning
+.includes() - look for value
+.indexOf() - find index of value // when value is not found it returns -1; and returns the first found element
+.slice() - creates new array from part of another, does not change the original array - best way to copy an array
+.splice() - adds/removes items to/from an array and returns the removed items
+.split() - Divides a String into an ordered list of substrings, puts these substrings into an array, and returns the array
+.map(x => x.length) - map recieves functions as a parameter 
+.filter(x => x > 2) - returns boolean
+.sort() - returns alwasy 3 nums =  >0 ==0 <0
+	.sort((a,b) => a.localeCompare(b)) - to sort srtings
+	.sort((a,b) => a-b);
+.replace('asd', 'dsa') - this method replaces the first value with the secod
+.fill(5) - fills the array with a value from the given index
+
+
+JSON - 
+
+JSON.stringify(object) - coverts the object into JSON
+JSON.parse(jasonData) - reverts the JSON file back to an object // side effect is that it breaks the heap relation 
+
+
+
+
+
+Objects - Methods
+
+obj.hasOwnProperty - checks if the property is included in the object
+
+Object.keys
+obj.age=28; this is how to add a key - value pair;
+obj['height'] = 185; this is the second way to add a key - value pair; 
+Object.entries(obj) - returns key - value pari in an array
+delete obj.age; - deletes a key-person pair but is a slow operation;
+o
+obj.forEach(el =>{...})
+Object Iteration uses (for in cycle) = for (const el in obj){}
+Object Iteration let keys = Object.keys(obj) - returns all the keys in an array
+Object Iteration let keys = Object.values(obj) - returns all the values in an array
+Object Iteration let keys = Object.entries(obj) - returns all the key-value pair in separate arrays
+
+
+Map() - the keys can be numbers and not only strings 
+let myMap = new Map(); - this is the way to declare it
+myMap.set("name", "Todor")
+myMap.size- returns how many elements the map has
+myMap.get("name") - returns the value of "name"
+myMap.has("name") - checks if the key exsists in the map
+myMap.delete("name") - this will delete the key-value par for name
+myMap.clear() - this deletes everything in the map
+.entries - returns [key, value]
+.keys() - returns [keys];
+
+Array.from(myMap.keys()) - will iterate through the keys and return them as an array
+
+SETS - saves only the unique values 
+let set = new Set([1,2,2,3,4])
+ set = [1,2,3,4]
+
+
+RegEx 
+
+test(string) - returns true or false
+match(text)
+exec(string, text)
+
+'use strict' - used for dubigging
+
+
+
+DOM (document object model) Introduction
+
+Create elements  -> document.createElement
+let p = document.createElement("p");
+let li = document.createElement("li");
+
+Clone a DOM element -> 
+let li = document.getElementById("my-list");
+let newLi = li.cloneNode(true);
+
+let ul = document.createElement("ul");
+let li = document.createElement("li");
+let a = document.createElement("a");
+a.setAttribure("href", "https://softuni.bg");
+li.appendChild(a)
+a.textContent = 'SoftUni'
+
+for (let i = 0; i< 100 ;i++){
+	let clone = li.cloneNode(true);
+	ul.appendChild(clone);
+}
+
+document.body.appendChild(ul);
+
+
+innterHTML - instert as HTML
+innerText - insert as Text and takes CSS into account 
+textContent - insert as Text but doesnt take CSS into account
+
+appendChild() - adds a new child, as the last child
+prepend() - adds a new child, as the first child
+removeChild() - removes the child selected 
+replaceChild()
+

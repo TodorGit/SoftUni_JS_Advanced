@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FromJSONToHTMLTable</title>
+    <title>FromJSONToHTMLTable</title>
+
+<style>
+
+table,th{
+
+border: groove;
+
+border-collapse: collapse;
+
+}
+
+td{
+
+border: 1px solid black;
+
+}
+
+td,th{
+
+padding: 5px;
+
+}
+
+</style>
+</head>
+<body>
+    <div id="wrapper">
+
+    </div>
+    
+    <script>
+    
+  function solve(input) {
+  let students = JSON.parse(input);
+  let htmlText = ['<table>'];
+  let objNames = students[0];
+
+  htmlText.push(makeKeyRow(objNames));
+  students.forEach(obj => htmlText.push(makeValueRow(obj)));
+  htmlText.push('</table>');
+
+  function makeKeyRow(arr) {
+    let keys = [];
+    Object.keys(arr).forEach(key => {
+      keys.push(`<th>${escapeHTML(key)}</th>`);
+    });
+    return ("<tr>" + keys.join('') + "</tr>");
+  }
+
+  function makeValueRow(obj) {
+    let rows = [];
+    Object.values(obj).forEach(value => {
+      rows.push(`<td>${escapeHTML(value)}</td>`);
+    });
+    return ("<tr>" + rows.join('') + "</tr>");
+  }
+
+  function escapeHTML(value) {
+    return value
+      .toString()
+      .replace(/&/g, '&amp;')
+      .replace(/</g, '&lt;')
+      .replace(/>/g, '&gt;')
+      .replace(/"/g, '&quot;')
+      .replace(/'/g, '&#39;');
+  }
+
+  return htmlText.join('\r\n');
+}
+    
+    </script>
+
+
+</body>
+</html>
